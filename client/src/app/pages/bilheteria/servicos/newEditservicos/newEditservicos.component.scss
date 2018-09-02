@@ -1,0 +1,16 @@
+.mat-form-field {
+    width: 100%;
+}
+button {
+    width: calc(50% - 8px);
+}
+button:first-child {
+    margin-right: 16px;
+}
+.body-1 {
+    max-width: 30ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-height: 21px;
+}

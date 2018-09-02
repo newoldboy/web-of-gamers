@@ -1,0 +1,176 @@
+<mat-sidenav-container [ngClass]="{'menu mat-drawer-content ' : menuGrande == true, 'menu-menor ' : menuGrande == false}">
+<mat-sidenav #sidenav mode="{{modoMenu}}" [ngClass]="{'sidenav' : menuGrande == true, 'sidenav-menor' : menuGrande == false}" opened="{{abreMenu}}" disableClose="'false'">
+    <div class="topo">
+      <mat-icon (click)="diminuiMenu();">
+        <i class="material-icons">menu</i>
+      </mat-icon>
+      <div class="logo"></div>
+      <div>
+        <mat-form-field appearance="outline" class="caixa-pesquisa">
+          <input matInput placeholder="Pesquisar">
+          <mat-icon matSuffix style="cursor: pointer">search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="submenu">
+      <div class="subtitulo">
+        <div class="icon">
+          <mat-icon>bookmark</mat-icon>
+        </div>
+        <h6>Fixados</h6>
+      </div>
+      <mat-list>
+        <mat-list-item class="itens-menu" >
+          <div (click)="goCadastroReservas()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Nova Reserva" matTooltipPosition="right">vpn_key</mat-icon>
+          <p>Nova Reserva</p>
+        </mat-list-item>
+        <mat-list-item class="itens-menu" >
+          <div (click)="goFechamentoCartao()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Fechamento de Cartão" matTooltipPosition="right">credit_card</mat-icon>
+          <p>Fechamento de Cartão</p>
+        </mat-list-item>
+        <mat-list-item class="itens-menu" >
+          <div (click)="goCadastroHospedes()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Novo Hóspede" matTooltipPosition="right">account_circle</mat-icon>
+          <p>Novo Hóspede</p>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goQuartosDisponiveis()"></div>
+        <mat-icon matPrefix class="icon" matTooltip="Quartos Disponíveis" matTooltipPosition="right">hotel</mat-icon>
+          <p>Quartos Disponíveis</p>
+        </mat-list-item>
+      </mat-list>
+      <div class="subtitulo">
+        <div class="icon">
+          <mat-icon>label</mat-icon>
+        </div>
+        <h6>Cliente</h6>
+      </div>
+      <mat-list>
+        <mat-list-item class="itens-menu">
+          <div (click)="goReservas()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Reservas" matTooltipPosition="right" (click)="goReservas()">vpn_key</mat-icon>
+          <p>Reservas</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroReservas()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goHospedes()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Hóspede" matTooltipPosition="right" (click)="goHospedes()">person</mat-icon>
+          <p>Hóspede</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroHospedes()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goClientes()"></div>
+        <mat-icon matPrefix class="icon" matTooltip="Clientes" matTooltipPosition="right" (click)="goClientes()">accessibility_new</mat-icon>
+          <p>Clientes</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroClientes()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goCartoes()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Cartões" matTooltipPosition="right" (click)="goCartoes()">credit_card</mat-icon>
+          <p>Cartões</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroCartoes()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goContaConsumo()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Conta de Consumo" matTooltipPosition="right" (click)="goContaConsumo()">account_balance_wallet</mat-icon>
+          <p>Conta de Consumo</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroContaConsumo()">add</mat-icon>
+          </span>
+        </mat-list-item>
+      </mat-list>
+      <div class="subtitulo" style="margin-top: 15px">
+        <div class="icon">
+          <mat-icon>label</mat-icon>
+        </div>
+        <h6>Estabelecimento</h6>
+      </div>
+      <mat-list>
+        <mat-list-item class="itens-menu">
+          <div (click)="goUsuarios()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Usuários" matTooltipPosition="right" (click)="goUsuarios()" >account_circle</mat-icon>
+          <p>Usuários</p>
+          <span class="icon-add"  >
+            <mat-icon (click)="goCadastroUsuarios()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goFuncionarios()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Funcionários" matTooltipPosition="right" (click)="goFuncionarios()">supervised_user_circle</mat-icon>
+          <p>Funcionários</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroFuncionarios()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goEscalas()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Escala de Serviço" matTooltipPosition="right" (click)="goEscalas()">format_align_justify</mat-icon>
+          <p>Escala de Serviço</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroEscalaServico()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goUnidades()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Unidades Hoteleiras" matTooltipPosition="right" (click)="goUnidades()">domain</mat-icon>
+          <p>Unidades Hoteleiras</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroUH()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goGruposUH()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Grupos de UH" matTooltipPosition="right" (click)="goGruposUH()">location_city</mat-icon>
+          <p>Grupos de UH</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroGruposUH()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goCategoriasUH()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Categorias de UH" matTooltipPosition="right" (click)="goCategoriasUH()">category</mat-icon>
+          <p>Categorias de UH</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroCategoriaUH()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goOrdensServico()"></div>
+          <mat-icon matPrefix class="icon" matTooltip="Ordens de Serviço" matTooltipPosition="right" (click)="goOrdensServico()">assignment</mat-icon>
+          <p>Ordens de Serviço</p>
+          <span class="icon-add">
+            <mat-icon (click)="goCadastroOrdemServico()">add</mat-icon>
+          </span>
+        </mat-list-item>
+        <mat-list-item class="itens-menu">
+          <div (click)="goQuartosDisponiveis()"></div> 
+          <mat-icon matPrefix class="icon" matTooltip="Quartos Disponíveis" matTooltipPosition="right" (click)="goQuartosDisponiveis()">hotel</mat-icon>
+          <p>Quartos Disponíveis</p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <mat-card class="menu-bottom">
+      <div class="icones">
+        <mat-icon class="icon-button" style="margin-left: 0;" (click)="goHome()">home</mat-icon>
+        <mat-icon class="icon-button">add_circle</mat-icon>
+        <mat-icon class="icon-button">hotel</mat-icon>
+        <mat-icon class="icon-button">exit_to_app</mat-icon>
+      </div>
+      <button mat-flat-button class="btn-reserva"><mat-icon class="icon">hotel</mat-icon>Nova Reserva</button>
+      <button mat-flat-button class="btn-return"><mat-icon class="icon">history</mat-icon></button>
+    </mat-card>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

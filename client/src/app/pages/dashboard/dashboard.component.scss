@@ -1,0 +1,170 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.painelfull{
+   margin: auto 0!important;
+}
+
+a{
+    color: transparent;
+    text-decoration: none;    
+}
+
+.logo{
+    height: 30px;
+    margin-left: 5%;
+}
+
+body {
+    padding: 40px;
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+.box{
+   cursor: pointer;
+   margin-top: 25px;   
+}   
+
+.img-item {            
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 160px;
+    margin: 1px solid #e5e5e5;                           
+}
+
+.img-item:hover{    
+    box-shadow:1px 1px #424242,
+               2px 2px #424242,
+               3px 3px #424242;  
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+    transition:all 0.3s ease;
+}
+
+.text-item{
+    font-family: Roboto;
+    text-align: center;  
+    position: relative;    
+    color: #fff!important;
+}
+
+.mat-grid-list {
+    display: block;
+    position: initial;
+}
+
+mat-toolbar {
+    padding: 0;
+    height: 50px;
+}
+.row {
+    width: 100%;
+    height: 100%;
+}
+img {
+    margin: 7.5px 0 0 10px
+}
+.btn-sair {
+    min-width: 100%;
+    height: 100%;
+}
+.user {
+    text-align: end;
+    overflow: hidden;
+}
+.user button {
+    height: 100%;
+}
+.row div {
+    padding: 0;
+}
+.conteudo-pagina {
+    padding: 15px;
+}
+.rigth {
+    padding-right: 10px !important;
+    margin-bottom: 15px;
+}
+.left {
+    padding-left: 10px !important;
+    margin-bottom: 15px;
+}
+.graficos {
+    padding-top: 20px;
+}
+mat-form-field {
+    padding: 0 10px;
+    max-width: calc(100% - 30px);
+}
+.selects {
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: end;
+    justify-content: flex-end;
+}
+
+@media (max-width: 767.98px) {
+    .rigth {
+        padding-right: 0px !important;
+    }
+    .left {
+        padding-left: 0px !important;
+    }
+}
+#trocados div, #vendidos div {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+mat-card-title, .titulo {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px !important;
+    justify-content: left !important;
+    text-transform: uppercase;
+    margin: 0;
+}

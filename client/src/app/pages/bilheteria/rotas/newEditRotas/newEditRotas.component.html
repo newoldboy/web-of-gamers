@@ -1,0 +1,15 @@
+<p class="body-1 color-primary-darker" mat-dialog-title>{{isEdit ? 'Editar Rota' : 'Nova Rota'}}</p>
+<div class="mat-dialog-content" mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Origem</mat-label>
+        <input matInput [(ngModel)]="rota.origem" placeholder="Origem">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Destino</mat-label>
+        <input matInput [(ngModel)]="rota.destino" placeholder="Destino">
+    </mat-form-field>
+</div>
+<div style="margin-top: 16px;" mat-dialog-actions>
+    <button mat-stroked-button color="primary" (click)="onNoClick()">Cancelar</button>
+    <button mat-raised-button color="primary" [disabled]="!rota.isValid()" (click)="salvarRota()">Salvar</button>
+</div>

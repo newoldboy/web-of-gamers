@@ -1,0 +1,125 @@
+.conteudo-pagina {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-titulo {
+  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  color: #5E285E;
+}
+
+.div-container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+mat-form-field {
+  width: 250px;
+  font-size: 14px;
+}
+
+form {
+  width: 100%;
+}
+
+// TRATAMENTO DE ERRO
+.mat-carregamento {
+  width: 85%;
+  margin-top: 64px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-erro {
+  width: 100%;
+  color: red;
+  text-align: center;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ------------------
+// STYLE BOTÕES
+.button-cancelar {
+  width: 120px;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.btn-cancelar {
+  width: 120px;
+  color: #5E285E;
+  border: 2px solid;
+}
+
+.btn-salvar {
+  width: 120px;
+  background-color: #5E285E;
+  color: #fff;
+  border: 2px solid #5E285E;
+
+  &:disabled {
+    border-color: #e0e0e0;
+  }
+}
+
+// -----------------
+.mat-card .mat-divider-horizontal {
+  position: relative;
+  left: 0;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+mat-card {
+  width: 624px;
+  height: 592px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row-div {
+  margin-top: 150px;
+}
+
+.div-loading {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+mat-divider {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: #00000054;
+}
+
+.span-style {
+  margin-top: 8px;
+  margin-left: 210px;
+  margin-right: 5px;
+}
+
+.divider-vertical {
+  width: 16px;
+}
+
+mat-slide-toggle {
+  margin-top: 7px;
+}
+
+.icon {
+  margin-left: 24px;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.80);
+  }
+}

@@ -1,0 +1,19 @@
+<mat-card class="card-principal">
+  <mat-card-title>
+    <h5>Grupos de UH</h5>
+  </mat-card-title>
+  <mat-card-content class="conteudo">
+    <form [formGroup]="form">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" formControlName="nome" [(ngModel)]="vm.nome" maxlength="50" tabindex="1">
+      </mat-form-field>
+    </form>
+    <div class="acoes">
+        <mat-icon matTooltip="Excluir" class="icon" style="margin-left: 0">delete</mat-icon>
+        <mat-icon matTooltip="Limpar campos" class="icon" (click)="limpaCampos()">clear_all</mat-icon>
+    </div>
+    <button mat-stroked-button class="btn-cancelar" (click)="getConsultaGrupos()">Cancelar</button>
+    <button mat-raised-button class="btn-salvar" (click)="salvarGrupo(); getConsultaGrupos();" [disabled]="form.invalid">Salvar</button>
+  </mat-card-content>
+</mat-card>

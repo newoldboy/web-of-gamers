@@ -1,0 +1,253 @@
+/* You can add global styles to this file, and also import other style files */
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  /* background-color: rgba(0, 0, 0, 0.04); */
+  font-family: 'Roboto', sans-serif !important;
+}
+
+app-portal-cliente .mat-grid-tile .mat-figure {
+  justify-content: left !important;
+}
+
+alt-produto .mat-slide-toggle-label-before .mat-slide-toggle-bar {
+  margin-left: auto;
+}
+
+alt-produto .mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+.mat-button,
+.mat-flat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-raised-button {
+  border-radius: 5px !important;
+}
+
+.mat-menu-panel {
+  margin-top: 56px;
+  width: 320px !important;
+  height: 320px !important;
+  overflow: hidden !important;
+  max-width: 320px !important;
+  margin-right: 15px !important;
+}
+
+preview-produto .mat-tab-label {
+  min-width: 33.333333% !important;
+  padding: 0 16px !important;
+  margin: 0px !important;
+}
+
+.row {
+  margin: 0;
+}
+
+.mat-drawer-content {
+  background-color: #f9f9f9;
+}
+
+.remove-loading {
+  display: none !important;
+}
+
+.dialog-campanha {
+  position: relative !important;
+}
+
+.mat-tab-group {
+  height: inherit;
+}
+
+.mat-tab-body-wrapper {
+  height: inherit;
+}
+
+.icon-help {
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+}
+
+.mat-tooltip {
+  font-size: 11px !important;
+}
+
+.mat-tab-body-content {
+  height: max-content !important;
+  overflow: hidden !important;
+}
+
+h1 {
+  font-size: 96px;
+  letter-spacing: -1.5px;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 60px;
+  letter-spacing: -0.5px;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 48px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 34px;
+  letter-spacing: 0.25px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 24px;
+  letter-spacing: 000px;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 20px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+}
+
+.subtitle-1 {
+  font-size: 16px;
+  letter-spacing: 0.15px;
+  font-weight: 400;
+}
+
+.subtitle-2 {
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+}
+
+.body-1 {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.body-2 {
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  font-weight: 400;
+}
+
+.button-font {
+  font-size: 14px;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.capiton {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+}
+
+.overline {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+}
+
+/* SCROLL */
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.659);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dad7d7;
+  border-radius: 5px;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  visibility: hidden !important;
+}
+
+toolbar-menu .mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* toolbar-menu .mat-form-field-flex{
+  color: #fff;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.16);
+  border-radius: 5px;
+} */
+toolbar-menu .mat-list .mat-list-item .mat-list-item-content {
+  height: initial;
+}
+
+toolbar-menu .mat-drawer:not(.mat-drawer-side) {
+  -webkit-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+}
+
+toolbar-menu .mat-card {
+  padding: 6px 0 0 16px !important;
+}
+
+toolbar-menu .mat-flat-button {
+  border-radius: 30px !important;
+}
+
+toolbar-menu .mat-flat-button .mat-button-wrapper {
+  margin-left: -3px;
+}
+
+toolbar-menu .mat-drawer-container {
+  display: initial;
+}
+
+button {
+  min-width: 0 !important;
+}
+
+/*ANIMAÇÕES */
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* FIM ANIMAÇÕES */
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: #FF6F00 !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #FF6F00 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #60285E !important;
+}

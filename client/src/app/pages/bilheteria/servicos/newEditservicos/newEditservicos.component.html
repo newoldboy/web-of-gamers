@@ -1,0 +1,15 @@
+<p class="body-1 color-primary-darker" mat-dialog-title>{{isEdit ? 'Editar Serviço' : 'Novo Serviço'}}</p>
+<div class="mat-dialog-content" mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="servico.nome" placeholder="Nome">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput [(ngModel)]="servico.descricao" placeholder="Descrição"></textarea>
+    </mat-form-field>
+</div>
+<div style="margin-top: 16px;" mat-dialog-actions>
+    <button mat-stroked-button color="primary" (click)="onNoClick()">Cancelar</button>
+    <button mat-raised-button color="primary" [disabled]="!servico.isValid()" (click)="salvarServico()">Salvar</button>
+</div>

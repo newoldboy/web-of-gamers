@@ -1,0 +1,54 @@
+<div class="preview-prod" [@appear] *ngIf="abrePreview">
+    <p class="body-1">
+        {{produto.name}}
+    </p>
+    <mat-icon class="close" (click)="fecha()">close</mat-icon>
+    <div class="conteudo">
+        <mat-tab-group dynamicHeight>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon>desktop_mac</mat-icon>
+                </ng-template>
+                <img src="../../../../../assets/images/desktop.svg" width="320px" height="304px">
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon>tablet_mac</mat-icon>
+                </ng-template>
+                <img src="../../../../../assets/images/tablet.svg" width="320px" height="304px">
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon>phone_iphone</mat-icon>
+                </ng-template>
+                <img src="../../../../../assets/images/smartphone.svg" width="320px" height="304px">
+            </mat-tab>
+        </mat-tab-group>
+        <div class="descritivos">
+            <div>
+                <h6><mat-icon>description</mat-icon>DESCRIÇÂO</h6>
+                <p>{{produto.descricaoManager}}</p>
+            </div>
+            <div>
+                <h6><mat-icon>bookmarks</mat-icon>SESSÂO ATRIBUIDA</h6>
+                <p>{{produto.isOtherTours ? 'Outros Passeios' : 'Passeios de Trem'}}</p>
+            </div>
+            <div>
+                <h6><mat-icon>star_rate</mat-icon>DESTAQUE</h6>
+                <p>{{produto.destaque ? 'Esse produto é um destaque.' : 'Esse produto não é destaque.'}}</p>
+            </div>
+            <div>
+                <h6><mat-icon>play_arrow</mat-icon>ATIVO</h6>
+                <p>{{produto.active ? 'Esse produto está ativo.' : 'Esse produto não está ativo.'}}</p>
+            </div>
+            <div *ngIf="produto.tipo">
+                <h6><mat-icon>group_work</mat-icon>TIPO</h6>
+                <p>Eses produto é um {{produto.tipo}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="btns-preview">
+        <button class="button-font" (click)="fecha()" mat-stroked-button color="primary">Cancelar</button>
+        <button class="button-font" (click)="goAltProduto()" mat-raised-button color="primary">Editar</button>
+    </div>
+</div>

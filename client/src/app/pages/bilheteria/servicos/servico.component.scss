@@ -1,0 +1,44 @@
+.mat-table {
+    background-color: transparent;
+}
+.mat-row {
+    max-width: 80%;
+    margin: auto;
+    border: none;
+}
+.mat-header-row {
+    background-color: #fff;
+    padding: 0 10%;
+}
+.mat-mini-fab {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    .mat-icon {
+        color: rgba($color: #000000, $alpha: 0.60);
+    }
+}
+.mat-row:hover {
+    cursor: pointer;
+    background-color: #ebebeb;
+}
+.btns-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 36px 0 39px 0;
+}
+.btn-novo {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    button {
+        color: #fff;
+        width: 152px;
+        height: 40px;
+        border-radius: 28px !important;
+    }
+}

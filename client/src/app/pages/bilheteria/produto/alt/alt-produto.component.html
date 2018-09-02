@@ -1,0 +1,239 @@
+<div class="full-content">
+    <div style="position: relative;">
+        <h4 class="text-center">{{useManagerInfo ? produto.nameManager ? produto.nameManager : 'Sem nome' : produto.nameBilheteria}}</h4>
+        <mat-icon matTooltip="Produto destaque" *ngIf="produto.destaque" class="star color-primary">star</mat-icon>
+        <mat-icon matTooltip="O produto não é destaque" *ngIf="!produto.destaque" class="star-border">star_border</mat-icon>
+        <mat-icon matTooltip="O produto está ativo" *ngIf="produto.active" class="toggle-on color-primary">toggle_on</mat-icon>
+        <mat-icon matTooltip="O produto está inativo"  *ngIf="!produto.active" class="toggle-off">toggle_off</mat-icon>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-6 col-xl-6 col-sm-12 col-12">
+            <div class="card-prod">
+                <h6>Nome e Url</h6>
+                <div class="form-slider">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nome manager</mat-label>
+                        <input matInput #input maxlength="30" placeholder="Nome manager" [(ngModel)]="produto.nameManager" [disabled]="!useManagerInfo||disabled" [required]="useManagerInfo"/>
+                        <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+                    </mat-form-field>
+                    <mat-slide-toggle [color]="accent" (change)="useManagerInfo ? noUseManagerInfo = false : noUseManagerInfo = true" [(ngModel)]="useManagerInfo" [disabled]="disabled"></mat-slide-toggle>
+                </div>
+                <div class="form-slider">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nome bilheteria</mat-label>
+                        <input matInput placeholder="Nome bilheteria" [(ngModel)]="produto.nameBilheteria" [readonly]="true" [disabled]="useManagerInfo||disabled"/>
+                    </mat-form-field>
+                    <mat-slide-toggle color="'primary'" (change)="noUseManagerInfo ? useManagerInfo = false : useManagerInfo = true" [(ngModel)]="noUseManagerInfo" [disabled]="disabled"></mat-slide-toggle>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Url Amigável</mat-label>
+                    <input matInput placeholder="Url Amigável" [(ngModel)]="produto.slug" [disabled]="disabled"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Descrição</mat-label>
+                    <textarea [required]="true" matInput [(ngModel)]="produto.descricaoManager" [disabled]="disabled" placeholder="Descrição"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6 col-xl-6 col-sm-12 col-12">
+            <div class="card-prod">
+                <h6>Menu Atribuído</h6>
+                <div>
+                    <mat-slide-toggle class="slider" color="'primary'" [labelPosition]="'before'" (change)="noIsOtherTours ? isOtherTours = false: isOtherTours = true" [(ngModel)]="noIsOtherTours" [disabled]="disabled">
+                        Passeio de trem
+                    </mat-slide-toggle>
+                </div>
+                <mat-divider style="margin: 8px 0;"></mat-divider>
+                <div>
+                    <mat-slide-toggle class="slider" color="'primary'" [labelPosition]="'before'" (change)="isOtherTours ? noIsOtherTours = false: noIsOtherTours = true" [(ngModel)]="isOtherTours" [disabled]="disabled">
+                        Outro passeio
+                    </mat-slide-toggle>
+                </div>
+            </div>
+            <div class="card-prod">
+                <h6>Fotos</h6>
+                <div style="margin-bottom: 16px; width: 100%">
+                    <input type="file" name="file" (change)="loadImagens($event.target.files)" accept=".png, .jpg" id="fileInput" class="inputfile" multiple="false"/>
+                    <label for="fileInput" class="button-font backgroud-accent-darker">
+                        <span>Inserir Fotos</span>
+                    </label>
+                </div>
+                <div style="margin-bottom: 16px; width: 100%">
+                    <div class="lista-imagens" *ngIf="produto.imagens.length">
+                        <div (click)="produto.imagemPrincipal = i" [ngClass]="{'backgroud-primary-lighter': produto.imagemPrincipal === i}" class="custom-chip" *ngFor="let img of produto.imagens;let i = index">
+                            <span>
+                                {{getNameImagens(img)}}
+                            </span>
+                            <mat-icon (click)="removeFoto(i)">close</mat-icon>
+                        </div>
+                    </div>
+                    <ul>
+                        <li style="margin-right: 20px;">
+                            Foto destaque
+                            <div class="backgroud-primary"></div>
+                        </li>
+                        <li>
+                            Outras fotos
+                            <div style="background-color: #e0e0e0"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="noIsOtherTours" class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+            <div class="card-prod">
+                <h6>Filtros</h6>
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-select [required]="true" placeholder="Tipo" [(ngModel)]="tipoProduto" (ngModelChange)="trocaTipo()">
+                                <mat-option [value]="1">Bilhete</mat-option>
+                                <mat-option [value]="2">Pacote</mat-option>
+                                <mat-option [value]="3">Litorina</mat-option>
+                                <mat-option [value]="4">Temático</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="tipoProduto === 4" class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-select [required]="true" placeholder="Horario" [(ngModel)]="produto.diurnoNoturno">
+                                <mat-option [value]="1">Diurno</mat-option>
+                                <mat-option [value]="2">Noturno</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 col-sm-6 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-select [required]="true" [compareWith]="compareRoutes" placeholder="Rota" [(ngModel)]="produto.rota">
+                                <mat-option [value]="rota" *ngFor="let rota of rotas">{{rota.origem + ' - ' + rota.destino}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+            <div class="card-prod">
+                <h6>Opcionais</h6>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-12">
+                        <div style="display: inline-flex;width: 100%;align-items: center">
+                            <mat-slide-toggle class="slider-extra" color="'primary'" [labelPosition]="'before'" (change)="temPrato ? pratosDoProduto = pratosDoProduto : pratosDoProduto = []" [(ngModel)]="temPrato" [disabled]="disabled">
+                                Tem prato ?
+                            </mat-slide-toggle>
+                            <button *ngIf="temPrato" (click)="novoPrato()" class="btn-add-mini" mat-mini-fab><mat-icon>add</mat-icon></button>
+                        </div>
+                        <mat-form-field *ngIf="temPrato">
+                            <mat-select placeholder="Pratos" [(ngModel)]="pratosDoProduto" [disabled]="disabled" multiple>
+                                <mat-option *ngFor="let prato of pratos" [value]="prato._id">{{prato.nome}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 col-12">
+                        <div style="display: inline-flex;width: 100%;align-items: center">
+                            <mat-slide-toggle class="slider-extra" color="'primary'" [labelPosition]="'before'" (change)="temServico ? servicosDoProduto = servicosDoProduto : servicosDoProduto = []" [(ngModel)]="temServico" [disabled]="disabled">
+                                Tem Serviço ?
+                            </mat-slide-toggle>
+                            <button *ngIf="temServico" (click)="novoServico()" class="btn-add-mini" mat-mini-fab><mat-icon>add</mat-icon></button>
+                        </div>
+                        <mat-form-field *ngIf="temServico">
+                            <mat-select placeholder="Serviços" [disabled]="disabled" [(ngModel)]="servicosDoProduto" multiple>
+                                <mat-option *ngFor="let servico of servicos" [value]="servico._id">{{servico.nome}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let classe of produto.classes;let j = index">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>{{classe.nome ? classe.nome : 'Itens do passeio'}}</mat-panel-title>
+                        <mat-panel-description>
+                            {{classe.nome ? 'Insira os itens inclusos da classe ' : ''}} {{classe.nome | capitalizeAll}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="row" style="padding: 0; margin: 0">
+                        <div class="itens-inclusos col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
+                            <p class="subtitle-1">
+                                O que inclui
+                                <mat-icon (click)="adcionarClasse(classe, true)" class="add-icons">add</mat-icon>
+                            </p>
+                            <div *ngFor="let item of classe.itensInclusos;let i = index">
+                                <div *ngIf="item.incluso">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Item</mat-label>
+                                        <input matInput placeholder="Item" [disabled]="disabled" [(ngModel)]="item.descricao"/>
+                                        <mat-icon style="cursor: pointer;" (click)="removeItem(classe, i)" matSuffix>close</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itens-nao-inclusos col-md-6 col-lg-6 col-xl-6 col-sm-12 col-12">
+                            <p class="subtitle-1">
+                                O que não inclui
+                                <mat-icon (click)="adcionarClasse(classe, false)" class="add-icons">add</mat-icon>
+                            </p>
+                            <div *ngFor="let item of classe.itensInclusos;let i = index">
+                                <div *ngIf="!(item.incluso)">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Item</mat-label>
+                                        <input matInput placeholder="Item" [disabled]="disabled" [(ngModel)]="item.descricao"/>
+                                        <mat-icon style="cursor: pointer;" (click)="removeItem(classe, i)" matSuffix>close</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="classe.codigo" class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+                            <mat-divider></mat-divider>
+                            <h6>
+                                Foto
+                            </h6>
+                            <div style="display: flex;margin-bottom: 16px;">
+                                <div class="imagens-classe">
+                                    <input type="file" name="fileClasse" (change)="loadImagens($event.target.files, classe)" accept=".png, .jpg" id="{{'fileInputClasse' + j}}" class="inputfile"/>
+                                    <label for="{{'fileInputClasse' + j}}" class="button-font backgroud-accent-darker">
+                                        <span>Foto da classe</span>
+                                    </label>
+                                </div>
+                                <div class="lista-imagens" *ngIf="classe.imagem[0]">
+                                    <div class="backgroud-primary color-white custom-chip">
+                                        <span>
+                                            {{getNameImagens(classe.imagem[0])}}
+                                        </span>
+                                        <mat-icon (click)="removeFotoClasse(classe)">close</mat-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+            
+        </div>
+        <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-12">
+            <button *ngIf="!produto.active" style="margin: 16px 0 0 auto;float: right;" [disabled]="disabled" (click)="salvarAlteracoes(true)" class="button-font" color="primary" mat-stroked-button>Ativar Produto</button>
+            <button *ngIf="produto.active" style="margin: 16px 0 0 auto;float: right;" [disabled]="disabled" (click)="salvarAlteracoes(false)" class="button-font" color="primary" mat-stroked-button>Inativar Produto</button>
+        </div>
+    </div>
+</div>
+<mat-slide-toggle color="'primary'" [(ngModel)]="produto.destaque" [disabled]="disabled">Destaque ?</mat-slide-toggle>
+
+<div class="btn-sair" matTooltip="Sair sem salvar.">
+    <button [disabled]="disabled" mat-mini-fab (click)="voltar()" color="primary">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<div class="btn-salvar" matTooltip="Salvar as alterações.">
+    <button [disabled]="disabled" (click)="salvarAlteracoes()" mat-fab color="primary">
+        <mat-icon>save</mat-icon>
+    </button>
+</div>
+

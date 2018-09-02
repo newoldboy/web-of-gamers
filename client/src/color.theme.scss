@@ -1,0 +1,48 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '../node_modules/@angular/material/theming';
+
+
+$custom-theme-primary: mat-palette($mat-purple, 600, 200, 900);
+$custom-theme-accent: mat-palette($mat-amber, 900, 900, 900);
+$custom-theme-warn: mat-palette($mat-red);
+
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($custom-theme);
+.backgroud-primary {
+    background-color: mat-color($custom-theme-primary, default) !important;
+}
+.backgroud-primary-lighter {
+    background-color: mat-color($custom-theme-primary, lighter) !important;
+}
+.backgroud-primary-darker {
+    background-color: mat-color($custom-theme-primary, darker) !important;
+}
+.color-primary {
+    color: mat-color($custom-theme-primary, default) !important;
+}
+.color-primary-lighter {
+    color: mat-color($custom-theme-primary, lighter) !important;
+}
+.color-primary-darker {
+    color: mat-color($custom-theme-primary, darker) !important;
+}
+
+.backgroud-accent {
+    background-color: mat-color($custom-theme-accent, default) !important;
+}
+.backgroud-accent-lighter {
+    background-color: mat-color($custom-theme-accent, lighter) !important;
+}
+.backgroud-accent-darker {
+    background-color: mat-color($custom-theme-accent, darker) !important;
+}
+.color-accent {
+    color: mat-color($custom-theme-accent, default) !important;
+}
+.color-accent-lighter {
+    color: mat-color($custom-theme-accent, lighter) !important;
+}
+.color-accent-darker {
+    color: mat-color($custom-theme-accent, darker) !important;
+}

@@ -1,0 +1,77 @@
+.card-principal {
+  width: 624px;
+  height: 300px;
+  top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+  h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: medium;
+    font-size: 24px;
+    color: #5E285E;
+    text-align: center;
+    margin-top: 23px;
+  }
+
+  .conteudo {
+    margin-top: 44px;
+
+    .form-field {
+      width: 592px;
+      font-family: 'Roboto',
+        sans-serif;
+      font-size: 16px;
+      color: black !important;
+    }
+
+    .acoes {
+      bottom: 16px;
+      position: absolute;
+
+      .icon{
+        margin-left: 24px;
+        cursor: pointer;
+        &:hover{
+          color: rgba(0,0,0,0.80);
+        }
+      }
+    }
+
+    .btn-cancelar {
+      right: 168px;
+      bottom: 16px;
+      position: absolute;
+      color: #5E285E;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      border: 2px solid;
+      font-weight: bold;
+      width: 136px;
+      height: 40px;
+      outline: none;
+    }
+
+    .btn-salvar {
+      right: 16px;
+      bottom: 16px;
+      position: absolute;
+      background-color: #5E285E;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      width: 136px;
+      height: 40px;
+      outline: none;
+
+      &:hover {
+        background-color: rgba(94, 40, 94, 0.9);
+      }
+      &:disabled{
+        background-color: #b6b6b6;
+      }
+    }
+  }
+}

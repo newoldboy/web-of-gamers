@@ -1,0 +1,111 @@
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 36px 0 39px 0;
+}
+.mat-table {
+    background-color: transparent;
+    max-width: 1160px;
+    margin: auto;
+}
+.mat-row {
+    margin: auto;
+    border: none;
+}
+.mat-header-row {
+    background-color: #fff;
+    max-width: 1160px;
+    margin: auto;
+}
+.mat-mini-fab {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    .mat-icon {
+        color: rgba($color: #000000, $alpha: 0.60);
+    }
+}
+.mat-row:hover {
+    cursor: pointer;
+    background-color: #ebebeb;
+}
+.fixed-table {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+.table {
+    margin-top: 56px;
+}
+.btns-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.btns-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.btn-sinc {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    button {
+        color: #fff;
+        width: 152px;
+        height: 40px;
+        border-radius: 28px !important;
+    }
+}
+.sincronizando {
+    span {
+        display: none;
+    }
+    mat-icon {
+        -webkit-animation: spin 2s infinite linear;
+        animation: spin 2s infinite linear;
+    }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(360deg); }
+    to { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(360deg); }
+    to {  -webkit-transform: rotate(0deg); }
+}
+@keyframes spin {
+    from { transform:rotate(360deg); }
+    to { transform:rotate(0deg); }
+}
+.coluna-codigo {
+    max-width: 100px;
+    min-width: 100px;
+}
+.coluna-nome {
+    max-width: 580px;
+    min-width: 580px;
+}
+.coluna-tipo, .coluna-destaque, .coluna-ativo, .coluna-editar {
+    max-width: 120px;
+    min-width: 120px;
+    padding-left: 24px;
+}
+@media (max-width: 1000px)  {
+    .mat-header-row {
+        padding: 0;
+    }
+    .coluna-tipo, .coluna-destaque, .coluna-ativo, .coluna-editar {
+        padding-left: 0;
+    }
+    .mat-header-cell {
+        padding: 0;
+    }
+    .mat-header-cell:first-child {
+        padding-left: 12px;
+    }
+    .mat-table {
+        overflow-x: scroll;
+    }
+}

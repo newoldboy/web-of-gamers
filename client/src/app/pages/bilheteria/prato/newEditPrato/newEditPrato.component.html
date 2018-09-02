@@ -1,0 +1,25 @@
+<p class="body-1 color-primary-darker" mat-dialog-title>{{isEdit ? 'Editar Prato' : 'Novo Prato'}}</p>
+<div class="mat-dialog-content" mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="prato.nome" placeholder="Nome">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput [(ngModel)]="prato.descricao" placeholder="Descrição"></textarea>
+    </mat-form-field>
+    <div class="upload-btn-wrapper">
+        <label for="file" class="btn-file backgroud-accent-darker">Carregar foto</label>
+        <input (change)="loadImagens($event.target.files)" type="file" id="file" accept=".png, .jpg">
+    </div>
+    <mat-chip-list *ngIf="prato.imagem">
+        <mat-chip selected>
+            {{getNameImagens(prato.imagem)}}
+            <mat-icon (click)="removeFoto()">close</mat-icon>
+        </mat-chip>
+    </mat-chip-list>
+</div>
+<div style="margin-top: 16px;" mat-dialog-actions>
+    <button mat-stroked-button color="primary" (click)="onNoClick()">Cancelar</button>
+    <button mat-raised-button color="primary" [disabled]="!prato.isValid()" (click)="salvarPrato()">Salvar</button>
+</div>

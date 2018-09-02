@@ -1,0 +1,27 @@
+<div class="tudo">
+  <div class="row justify-content-center vertical-center">
+    <div class="col-9 col-sm-7 col-md-5 col-lg-3 desfoque blurred-bg">
+      <div class="contentLogin">
+        <div class="logoEmpresa">
+          <img src="../../../assets/images/logo.svg" alt="limber-admin">
+        </div>
+        <form class="inputsLogin" name="form" [formGroup]="loginForm" novalidate>
+          <div class="form-group">
+            <label for="usuario">Usuário</label>
+            <input type="text" class="form-control" name="usuario" required formControlName="usuario" />
+            <div *ngIf="!loginForm.controls.usuario.valid && loginForm.controls.usuario.dirty" class="invalid-feedback">Usuário invalido</div>
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="senha" class="form-control" name="senha" required formControlName="senha" />
+            <div *ngIf="!loginForm.controls.senha.valid && loginForm.controls.senha.dirty" class="invalid-feedback">Senha invalida</div>
+          </div>
+          <div *ngIf="mensagem" class="text-center alert alert-danger" style="border-color: transparent;background-color: transparent;margin-bottom: -35px;">{{mensagem}}</div>
+          <div class="form-group">
+            <button (click)="logar()" [disabled]="loading || !loginForm.valid" class="btn btn-success btn-login">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

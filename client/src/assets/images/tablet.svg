@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 304">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(0,0,0,0.04);
+        stroke: rgba(0,0,0,0.16);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #38aa00;
+      }
+
+      .cls-4 {
+        fill: rgba(0,0,0,0.2);
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="tablet" transform="translate(-8 -112)">
+    <g id="fundo" class="cls-1" transform="translate(8 112)">
+      <rect class="cls-6" width="320" height="304"/>
+      <rect class="cls-5" x="0.5" y="0.5" width="319" height="303"/>
+    </g>
+    <g id="baseline-tablet-24px" transform="translate(40 136)">
+      <rect id="tela" class="cls-2" width="149.143" height="128.401" transform="translate(53.533 63.655)"/>
+      <rect id="comprar" class="cls-3" width="56.152" height="8.866" rx="2" transform="translate(132.226 145.354)"/>
+      <rect id="servicos" class="cls-4" width="40.636" height="8.866" transform="translate(132.226 132.055)"/>
+      <rect id="preco" class="cls-4" width="23.643" height="8.866" transform="translate(132.226 117.279)"/>
+      <rect id="titulo" class="cls-4" width="56.152" height="8.866" transform="translate(132.226 102.502)"/>
+      <rect id="foto" class="cls-4" width="65.018" height="51.719" rx="3" transform="translate(62.776 102.502)"/>
+      <g id="baseline-train-24px" transform="translate(78.291 111.368)">
+        <path id="Path_9" data-name="Path 9" class="cls-2" d="M15.329,2C9.664,2,4,2.708,4,7.664V21.117a4.962,4.962,0,0,0,4.956,4.956L6.832,28.2v.708H9.99l2.832-2.832h5.339l2.832,2.832h2.832V28.2L21.7,26.074a4.962,4.962,0,0,0,4.956-4.956V7.664C26.658,2.708,21.588,2,15.329,2ZM8.956,23.242a2.124,2.124,0,1,1,2.124-2.124A2.121,2.121,0,0,1,8.956,23.242Zm4.956-9.913H6.832V7.664h7.081Zm2.832,0V7.664h7.081v5.664ZM21.7,23.242a2.124,2.124,0,1,1,2.124-2.124A2.121,2.121,0,0,1,21.7,23.242Z" transform="translate(1.664 0.832)"/>
+        <path id="Path_10" data-name="Path 10" class="cls-5" d="M0,0H33.986V33.986H0Z"/>
+      </g>
+      <path id="Path_13" data-name="Path 13" class="cls-5" d="M0,0H256V256H0Z"/>
+      <path id="Path_14" data-name="Path 14" d="M214.333,4h-192A21.4,21.4,0,0,0,1,25.333v128a21.4,21.4,0,0,0,21.333,21.333h192a21.3,21.3,0,0,0,21.227-21.333l.107-128A21.4,21.4,0,0,0,214.333,4ZM193,153.333H43.667v-128H193Z" transform="translate(9.667 38.667)"/>
+    </g>
+  </g>
+</svg>

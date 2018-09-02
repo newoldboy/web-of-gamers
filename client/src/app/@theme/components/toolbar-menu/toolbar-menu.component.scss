@@ -1,0 +1,308 @@
+.mat-drawer-container {
+  position: initial !important;
+}
+
+.btn-menu {
+  background-color: #60285E;
+  color: #fff;
+  margin: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.menu-menor {
+  .mat-drawer-content {
+    margin-left: 60px !important;
+    margin-right: 0px !important;
+  }
+  .sidenav-menor {
+    width: 60px;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+  }
+  .topo {
+    background-image: none;
+    i {
+      padding: 8px;
+      background-color: #60285E;
+      border-radius: 30px;
+      color: white;
+      margin: 7px;
+      box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      &:active {
+        opacity: 0.6;
+      }
+    }
+    .logo,
+    .caixa-pesquisa {
+      display: none;
+    }
+  }
+  .submenu {
+    margin-top: 20px;
+    position: absolute;
+    overflow-y: auto !important;
+    height: calc(100% - 290px);
+    .mat-list .mat-list-item {
+      height: 35px !important;
+    }
+    .subtitulo {
+      margin-top: 0;
+      h6 {
+        display: none;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 15px;
+      }
+    }
+    .itens-menu {
+      p,
+      .icon-add {
+        display: none;
+      }
+      .icon {
+        zoom: 85%;
+        color: rgba(0, 0, 0, 0.54);
+        cursor: pointer;
+      }
+    }
+  }
+  .mat-card {
+    box-shadow: none !important;
+  }
+  .menu-bottom {
+    bottom: 15px;
+    height: 209px;
+    position: absolute;
+    width: 45px;
+    margin-left: 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.34);
+    border-radius: 0;
+    .icones {
+      margin-left: -6px;
+      .icon-button {
+        color: rgba(0, 0, 0, 0.54);
+        &:hover {
+          color: #60285E;
+          transition: all 500ms;
+          cursor: pointer;
+        }
+      }
+    }
+    .btn-reserva {
+      width: 40px;
+      height: 40px;
+      background-color: #60285E;
+      -webkit-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      font-size: 0;
+      padding: 0;
+      margin-left: -13px;
+      margin-top: 10px;
+    }
+    .btn-return {
+      background-color: white;
+      color: #60285E;
+      height: 30px;
+      border-radius: 30px;
+      outline: none;
+      width: 30px;
+      margin-left: -10px;
+      margin-top: 5px;
+      cursor: pointer;
+      -webkit-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      .icon {
+        margin-left: -10px;
+        margin-top: -6px;
+        zoom: 90%;
+      }
+    }
+  }
+}
+
+.menu {
+  .mat-drawer-content {
+    margin-right: 0px !important;
+  }
+  .sidenav {
+    width: 296px;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+  }
+  .topo {
+    background-image: url(../../../../assets/images/fundo-sidenav-liso.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 147px;
+    width: 100%;
+    position: absolute;
+    display: block;
+    i {
+      padding: 20px;
+      &:active {
+        opacity: 0.6;
+      }
+    }
+    .logo {
+      background-image: url(../../../../assets/images/logo.svg);
+      background-repeat: no-repeat;
+      background-position-y: 5px;
+      height: 40px;
+      width: 130px;
+      display: -webkit-inline-box;
+      margin-left: 25%;
+      margin-top: 5px;
+      position: fixed;
+    }
+    .caixa-pesquisa {
+      margin-left: 16px;
+      margin-top: 10px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      width: 260px;
+    }
+  }
+  .submenu {
+    margin-top: 120px;
+    position: absolute;
+    overflow-y: auto !important;
+    height: calc(100% - 273px);
+    .subtitulo {
+      display: -webkit-inline-box;
+      margin-left: 16px;
+      width: 245px;
+      margin-top: 15px;
+      h6 {
+        font-size: 16px;
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: medium;
+        margin-top: 3px;
+        margin-left: 5px;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .itens-menu {
+      display: -webkit-inline-box;
+      margin-top: -10px;
+      cursor: pointer;
+      .icon-add {
+        margin-top: 5px;
+        position: relative;
+      }
+      div {
+        height: 33px;
+        display: flex;
+      }
+      .icon {
+        zoom: 85%;
+        color: rgba(0, 0, 0, 0.54);
+        margin-left: 24px;
+        margin-top: 5px;
+      }
+      p {
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        margin-left: 10px;
+        color: rgba(0, 0, 0, 0.54);
+        margin-top: 20px;
+        width: 170px;
+      }
+      div {
+        margin: 0;
+      }
+      &:hover {
+        div {
+          background-color: rgba(96, 40, 94, 0.2);
+          width: 275px;
+          border-radius: 0 30px 30px 0;
+          position: absolute;
+          margin-left: -20px;
+        }
+      }
+      &:active,
+      &:focus {
+        div {
+          background-color: rgba(96, 40, 94, 0.3);
+          transition: all 300ms;
+        }
+      }
+    }
+  }
+  .menu-bottom {
+    bottom: 0;
+    height: 152px;
+    position: absolute;
+    width: 100%;
+    -webkit-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+    .icones {
+      outline: none;
+      width: 100%;
+      height: 30px;
+      margin-top: 10px;
+      .icon-button {
+        margin-left: 20px;
+        color: rgba(0, 0, 0, 0.54);
+        transition: all 300ms;
+        &:hover {
+          color: #60285E;
+          transition: all 300ms;
+          cursor: pointer;
+          transform: translate(0, -2px);
+        }
+      }
+    }
+    .btn-reserva {
+      background-color: #60285E;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      color: white;
+      border-radius: 30px;
+      margin-top: 30px;
+      outline: none;
+      height: 50px;
+      width: 200px;
+      -webkit-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      .icon {
+        margin-right: 10px;
+      }
+    }
+    .btn-return {
+      background-color: white;
+      color: #60285E;
+      height: 50px;
+      border-radius: 30px;
+      outline: none;
+      width: 50px !important;
+      margin-left: 15px;
+      cursor: pointer;
+      -webkit-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+      box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.24);
+    }
+  }
+}
+
+@media screen and (max-width: 2560px) {}
+
+@media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 575.98) {}
+
+@media screen and (min-width: 2560px) {}

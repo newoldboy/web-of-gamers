@@ -1,0 +1,35 @@
+.preview-prod {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: -webkit-fill-available;
+  background-color: #fff;
+  z-index: 2001;
+  box-shadow: -2px 0px 6px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+}
+
+i {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  color: rgba(0, 0, 0, 0.60);
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.40);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.60);
+  }
+}
+button{
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 80%;
+    min-width: 55px;
+}

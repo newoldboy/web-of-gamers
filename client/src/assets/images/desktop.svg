@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 304">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(0,0,0,0.04);
+        stroke: rgba(0,0,0,0.16);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #38aa00;
+      }
+
+      .cls-4 {
+        fill: rgba(0,0,0,0.2);
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="desktop" transform="translate(-5 -116)">
+    <g id="fundo" class="cls-1" transform="translate(5 116)">
+      <rect class="cls-6" width="320" height="304"/>
+      <rect class="cls-5" x="0.5" y="0.5" width="319" height="303"/>
+    </g>
+    <g id="baseline-desktop_windows-24px" transform="translate(37 140)">
+      <rect id="tela" class="cls-2" width="193.265" height="128.506" transform="translate(31.368 42.498)"/>
+      <rect id="comprar" class="cls-3" width="76.901" height="12.142" rx="2" transform="translate(134.577 130.53)"/>
+      <rect id="servicos" class="cls-4" width="55.652" height="12.142" transform="translate(134.577 112.316)"/>
+      <rect id="price" class="cls-4" width="32.379" height="12.142" transform="translate(134.577 92.079)"/>
+      <rect id="titulo" class="cls-4" width="76.901" height="12.142" transform="translate(134.577 71.842)"/>
+      <rect id="foto" class="cls-4" width="89.043" height="70.83" rx="3" transform="translate(39.462 71.842)"/>
+      <g id="baseline-train-24px" transform="translate(60.711 83.984)">
+        <path id="Path_9" data-name="Path 9" class="cls-2" d="M19.515,2C11.758,2,4,2.97,4,9.758V28.182a6.8,6.8,0,0,0,6.788,6.788L7.879,37.879v.97H12.2l3.879-3.879h7.312l3.879,3.879h3.879v-.97L28.242,34.97a6.8,6.8,0,0,0,6.788-6.788V9.758C35.03,2.97,28.087,2,19.515,2ZM10.788,31.091A2.909,2.909,0,1,1,13.7,28.182,2.905,2.905,0,0,1,10.788,31.091Zm6.788-13.576h-9.7V9.758h9.7Zm3.879,0V9.758h9.7v7.758Zm6.788,13.576a2.909,2.909,0,1,1,2.909-2.909A2.905,2.905,0,0,1,28.242,31.091Z" transform="translate(3.758 1.879)"/>
+        <path id="Path_10" data-name="Path 10" class="cls-5" d="M0,0H46.545V46.545H0Z"/>
+      </g>
+      <path id="Path_7" data-name="Path 7" class="cls-5" d="M0,0H256V256H0Z"/>
+      <path id="Path_8" data-name="Path 8" d="M214.333,2h-192A21.4,21.4,0,0,0,1,23.333v128a21.4,21.4,0,0,0,21.333,21.333H97V194H75.667v21.333H161V194H139.667V172.667h74.667a21.4,21.4,0,0,0,21.333-21.333v-128A21.4,21.4,0,0,0,214.333,2Zm0,149.333h-192v-128h192Z" transform="translate(9.667 19.333)"/>
+    </g>
+  </g>
+</svg>

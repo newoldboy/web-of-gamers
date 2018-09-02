@@ -1,0 +1,32 @@
+<h4>PRATOS</h4>
+<mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="nome">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Nome</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.nome }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="descricao">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Descrição</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.descricao }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="acoes">
+        <mat-header-cell *matHeaderCellDef>Editar/Apagar</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+            <div class="btns-acoes">
+                <button mat-mini-fab (click)="editPrato(row)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-mini-fab (click)="deletePrato(row._id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-cell>
+    </ng-container>
+    <mat-header-row class="capiton" *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row class="body-2" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<mat-paginator style="background-color: transparent;margin: 0 10%;" #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"></mat-paginator>
+<div class="btn-novo" matTooltip="Novo prato.">
+    <button (click)="novoPrato()" mat-raised-button class="backgroud-accent-darker">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

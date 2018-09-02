@@ -1,0 +1,62 @@
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+.mat-form-field {
+    width: 100%;
+}
+.body-1 {
+    max-width: 30ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-height: 21px;
+}
+button {
+    width: calc(50% - 8px);
+}
+button:first-child {
+    margin-right: 16px;
+}
+.btn-file {
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mat-chip {
+    cursor: pointer;
+    width: 100%;
+    .mat-icon {
+        margin-left: auto;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.16);
+        }
+    }
+}
+.upload-btn-wrapper input[type=file] {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
