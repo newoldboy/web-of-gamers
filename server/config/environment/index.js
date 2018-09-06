@@ -21,9 +21,9 @@ const all = {
         session: 'angular-fullstack-secret'
     },
     firebird: {
-        host: '192.168.25.42', 
+        host: '192.168.200.45', 
         port: 3050,
-        database: 'C:/Users/Desenvolvimento/Desktop/hotelaria/base/CDE_WIN_MAGIC_CITY.FDB', // D:/bases desenvolvimento/CDE_WIN_TREM_CTB.FDB
+        database: 'D:/PROGRAMAÇÃO/bases/PortalGame.fdb',
         user: 'SYSDBA',
         password: 'masterkey', //sdb162sw masterkey
         lowercase_keys: false,

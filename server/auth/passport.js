@@ -10,8 +10,7 @@ function auth(usuario, senha, cb) {
         if (err) {
             db.detach();
             return cb(err, null);
-        }            db.query("select CODIGO, NOME,LOGIN as USUARIO, GRUPO AS GRUPO_USUARIO, upper(SENHA) as SENHA, coalesce(ATIVO,'S') as ATIVO\
-        from CAD_USUARIOS WHERE LOGIN = ? AND SENHA = ?", [usuario, senha], function (err, retUsers) {
+        }            db.query("select CODIGO, USUARIO, SENHA, GRUPO_USUARIO, from GAME_USUARIO WHERE LOGIN = ? AND SENHA = ?", [usuario, senha], function (err, retUsers) {
             if (retUsers) {
                 if (retUsers.length > 0) {
                     retUsers.forEach(function (row) {

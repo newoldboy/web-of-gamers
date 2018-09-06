@@ -6,16 +6,13 @@
   max-width: 100%;
 }
 
-.logoEmpresa {
-  padding: 5px;
-  width: 100%;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.logoEmpresa img {
-  max-height: 90%;
-  max-width: 60%;
+.inputsLogin{
+  margin-left: auto;
+  margin-right: auto;
+  width: 480px;
+  height: 380px;
+  background: linear-gradient(#D10000, rgb(0, 0, 0));
+  color: white;
 }
 
 .contentLogin {
@@ -39,11 +36,7 @@
   margin: 0;
 }
 
-$normal-img:"/assets/images/background-dia.svg";
-$blurred-img:"/assets/images/background-dia-d.svg";
-
 .tudo {
-	background-image:url($normal-img);
 	background-repeat:no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -51,17 +44,9 @@ $blurred-img:"/assets/images/background-dia-d.svg";
 }
 
 .blurred-bg {
-
-	background-image:url($blurred-img);
 	background-repeat:no-repeat;
 	background-size: cover;
-  background-attachment: fixed;    
-	&.tinted{
-		background-image: (linear-gradient(0deg, rgba(255,255,255,.2),rgba(255,255,255,.2)),url($blurred-img));
-	}
-	&.shaded{
-		background-image: (linear-gradient(0deg, rgba(0,0,0,.2),rgba(0,0,0,.2)),url($blurred-img));
-	}
+  background-attachment: fixed;  
 }
 .box{
 	width:500px;

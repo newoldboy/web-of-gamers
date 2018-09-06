@@ -1,7 +1,7 @@
 {
-  "name": "limber-hotelaria",
+  "name": "web-of-games",
   "version": "1.0.0",
-  "author": "ivan augusto hoinacki <ivanhoinacki>",
+  "author": "Guilherme Pereira",
   "license": "ISC",
   "scripts": {
     "start": "node server/app.js"
@@ -25,6 +25,7 @@
     "jshint-esnext": "^2.7.0-3",
     "jsonwebtoken": "^5.0.0",
     "jwt-simple": "^0.5.1",
+    "loader": "^2.1.1",
     "lodash": "~2.4.1",
     "method-override": "~1.0.0",
     "moment": "^2.18.1",
