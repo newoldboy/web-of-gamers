@@ -18,17 +18,19 @@ export class LoginComponent implements OnInit {
     public model: any = {};
     public loading = false;
     private returnUrl: string;
-    public loginForm: FormGroup;
+    public cardForm: FormGroup;
+    public password = true;
     
     constructor(private loginService: LoginService,
         private router: Router,
         private authService: AuthService,
-        private formBuilder: FormBuilder
+        private fb: FormBuilder
     ) {
-        this.loginForm = formBuilder.group({
-            'usuario': [null, Validators.required],
-            'senha': [null, Validators.required],
-        });
+        
+    this.cardForm = fb.group({
+        login: ['', Validators.required],
+        senha: ['', Validators.required]
+      });
     }
     
     ngOnInit() {
@@ -42,7 +44,7 @@ export class LoginComponent implements OnInit {
         
         
         this.loginService
-        .login({ usuario: this.loginForm.value.usuario, senha: this.loginForm.value.senha })
+        .login({ usuario: this.cardForm.value.usuario, senha: this.cardForm.value.senha })
         .then((response) => {
             this.authService.clearCredentials();
             if (this.authService.setToken(response)) {
